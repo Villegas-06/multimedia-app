@@ -1,0 +1,204 @@
+{
+  "categories": [
+    {
+      "name": "Películas",
+      "content": [
+        {
+          "id": 1,
+          "title": "Avengers: Endgame",
+          "sinopsis": "Después de los devastadores eventos de Avengers: Infinity War, los superhéroes restantes se reúnen para deshacer las acciones de Thanos y restaurar el orden en el universo.",
+          "poster": "https://www.lahiguera.net/cinemania/pelicula/8898/vengadores_endgame-cartel-8870.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=znk2OICHbjY"
+        },
+        {
+          "id": 2,
+          "title": "Interstellar",
+          "sinopsis": "En un futuro distópico donde la Tierra se está quedando sin recursos, un grupo de astronautas emprende un viaje interestelar para encontrar un nuevo hogar para la humanidad.",
+          "poster": "https://www.lahiguera.net/cinemania/pelicula/6343/interstellar-cartel-5596m.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=LYS2O1nl9iM"
+        },
+        {
+          "id": 3,
+          "title": "Joker",
+          "sinopsis": "En la ciudad de Gotham, el comediante fracasado Arthur Fleck se transforma en Joker y desata el caos en la ciudad mientras enfrenta sus propios demonios.",
+          "poster": "https://www.lahiguera.net/cinemania/pelicula/8757/joker-cartel-9109m.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=ygUHhImN98w"
+        },
+        {
+          "id": 4,
+          "title": "The Shawshank Redemption",
+          "sinopsis": "Dos hombres encarcelados se unen a lo largo de varios años, encontrando consuelo y redención eventual a través de actos de decencia común.",
+          "poster": "https://www.ecartelera.com/carteles/5600/5676/003_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=PLl99DlL6b4"
+        },
+        {
+          "id": 5,
+          "title": "The Dark Knight",
+          "sinopsis": "Cuando la amenaza conocida como El Joker emerge de su misterioso pasado, siembra el caos y la destrucción en la gente de Gotham.",
+          "poster": "https://www.ecartelera.com/carteles/1700/1742/001_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=EXeTwQWrcwY"
+        }
+      ]
+    },
+    {
+      "name": "Series",
+      "content": [
+        {
+          "id": 6,
+          "title": "Stranger Things",
+          "sinopsis": "Cuando un niño desaparece, su madre, un jefe de policía y sus amigos deben enfrentarse a fuerzas sobrenaturales aterradoras para recuperarlo.",
+          "poster": "https://www.ecartelera.com/carteles-series/100/124/002_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=x7Yq9MJUqjY"
+        },
+        {
+          "id": 7,
+          "title": "The Crown",
+          "sinopsis": "Sigue las rivalidades políticas y romances del reinado de la Reina Isabel II y los eventos que dieron forma a la segunda mitad del siglo XX.",
+          "poster": "https://www.ecartelera.com/carteles-series/200/208/003_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=zzBjNG1GKu4"
+        },
+        {
+          "id": 8,
+          "title": "Breaking Bad",
+          "sinopsis": "Un profesor de química de secundaria convertido en fabricante de metanfetaminas se asocia con un ex alumno para asegurar el futuro de su familia.",
+          "poster": "https://www.ecartelera.com/carteles-series/000/62/001_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=mXd1zTwcQ18"
+        },
+        {
+          "id": 9,
+          "title": "The Mandalorian",
+          "sinopsis": "Los viajes de un cazarrecompensas solitario en las regiones exteriores de la galaxia, lejos de la autoridad de la Nueva República.",
+          "poster": "https://www.ecartelera.com/carteles-series/1100/1164/001_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=X9xJaQK5BjQ"
+        },
+        {
+          "id": 10,
+          "title": "Game of Thrones",
+          "sinopsis": "Nueve familias nobles luchan por el control de las tierras de Westeros, mientras que un antiguo enemigo regresa después de estar dormido durante milenios.",
+          "poster": "https://www.ecartelera.com/carteles-series/000/1/026_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=KPLWWIOCOOQ"
+        }
+      ]
+    },
+    {
+      "name": "Documentales",
+      "content": [
+        {
+          "id": 11,
+          "title": "Our Planet",
+          "sinopsis": "Experimenta la belleza natural de nuestro planeta y examina cómo el cambio climático afecta a todas las criaturas vivientes en esta ambiciosa serie documental.",
+          "poster": "https://www.ecartelera.com/carteles-series/1200/1291/001_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=aETNYyrqNYE"
+        },
+        {
+          "id": 12,
+          "title": "13th",
+          "sinopsis": "La cineasta Ava DuVernay explora la historia de la desigualdad racial en Estados Unidos, centrándose en las prisiones de la nación.",
+          "poster": "https://www.ecartelera.com/carteles/12000/12006/001_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=K6IXQbXPO3I"
+        },
+        {
+          "id": 13,
+          "title": "Planet Earth II",
+          "sinopsis": "Una serie documental sobre la vida en la naturaleza.",
+          "poster": "https://www.ecartelera.com/carteles/6300/6361/001_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=c8aFcHFu8QM"
+        },
+        {
+          "id": 14,
+          "title": "The Social Dilemma",
+          "sinopsis": "Explora el peligroso impacto humano de las redes sociales, con expertos tecnológicos sonando la alarma sobre sus propias creaciones.",
+          "poster": "https://www.ecartelera.com/carteles/16700/16703/001_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=uaaC57tcci0"
+        },
+        {
+          "id": 15,
+          "title": "American Factory",
+          "sinopsis": "En Ohio postindustrial, un multimillonario chino abre una nueva fábrica en los restos de una planta abandonada de General Motors, contratando a dos mil estadounidenses de clase trabajadora.",
+          "poster": "https://www.ecartelera.com/carteles/16000/16006/001_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=m36QeKOJ2Fc"
+        }
+      ]
+    },
+    {
+      "name": "Infantiles",
+      "content": [
+        {
+          "id": 16,
+          "title": "Moana",
+          "sinopsis": "Una adolescente aventurera zarpa en una misión audaz para salvar a su pueblo. Durante su viaje, Moana conoce al poderoso semidiós Maui.",
+          "poster": "https://www.ecartelera.com/carteles/8800/8843/006_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=tmpTGztGJ8E"
+        },
+        {
+          "id": 17,
+          "title": "Frozen",
+          "sinopsis": "Cuando la recién coronada Reina Elsa accidentalmente usa su poder para convertir las cosas en hielo y maldecir su hogar en invierno infinito, su hermana Anna se une a un hombre de montaña, su juguetón reno y un muñeco de nieve para cambiar las condiciones climáticas.",
+          "poster": "https://www.ecartelera.com/carteles/4900/4952/002_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=FmrnYJGQQug"
+        },
+        {
+          "id": 18,
+          "title": "Coco",
+          "sinopsis": "El aspirante a músico Miguel, enfrentado con la prohibición ancestral de la música de su familia, entra en la Tierra de los Muertos para encontrar a su tatarabuelo, un legendario cantante.",
+          "poster": "https://www.ecartelera.com/carteles/9900/9997/005_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=awzWdtCezDo"
+        },
+        {
+          "id": 19,
+          "title": "Toy Story",
+          "sinopsis": "Un muñeco vaquero se siente profundamente amenazado y celoso cuando una nueva figura de un astronauta lo reemplaza como el juguete principal en la habitación de un niño.",
+          "poster": "https://www.ecartelera.com/carteles/2600/2612/001_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=v-PjgYDrg70"
+        },
+        {
+          "id": 20,
+          "title": "Zootopia",
+          "sinopsis": "En una ciudad de animales antropomórficos, una conejita policía novata y un astuto zorro estafador deben trabajar juntos para descubrir una conspiración.",
+          "poster": "https://www.ecartelera.com/carteles/6800/6835/013_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=UEdAm1rqt-0"
+        }
+      ]
+    },
+    {
+      "name": "Otros",
+      "content": [
+        {
+          "id": 21,
+          "title": "The Matrix",
+          "sinopsis": "Un hacker de computadoras aprende de misteriosos rebeldes sobre la verdadera naturaleza de su realidad y su papel en la guerra contra sus controladores.",
+          "poster": "https://www.ecartelera.com/carteles/4100/4109/002_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=OM0tSTEQCQA"
+        },
+        {
+          "id": 22,
+          "title": "Pulp Fiction",
+          "sinopsis": "Las vidas de dos sicarios de la mafia, un boxeador, un gángster y su esposa, y un par de atracadores de restaurantes se entrelazan en cuatro relatos de violencia y redención.",
+          "poster": "https://www.ecartelera.com/carteles/200/286/001_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=s7EdQ4FqbhY"
+        },
+        {
+          "id": 23,
+          "title": "Inception",
+          "sinopsis": "Un ladrón que roba secretos corporativos a través del uso de la tecnología de compartir sueños recibe la tarea inversa de plantar una idea en la mente de un CEO.",
+          "poster": "https://www.ecartelera.com/carteles/3300/3399/002_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=YoHD9XEInc0"
+        },
+        {
+          "id": 24,
+          "title": "Forrest Gump",
+          "sinopsis": "Las presidencias de Kennedy y Johnson, la Guerra de Vietnam, el escándalo de Watergate y otros eventos históricos se desarrollan desde la perspectiva de un hombre de Alabama con un coeficiente intelectual de 75, cuyo único deseo es reunirse con su amor de la infancia.",
+          "poster": "https://www.ecartelera.com/carteles/3400/3475/001_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=Cyh1LpxnaxI"
+        },
+        {
+          "id": 25,
+          "title": "The Lion King",
+          "sinopsis": "Un joven león regresa para reclamar el trono que le fue arrebatado a él y a su padre por su tío traicionero después de pasar su infancia en el exilio bajo el cuidado de un simpático jabalí y un suricata.",
+          "poster": "https://www.ecartelera.com/carteles/3000/3005/002_p.jpg",
+          "videoUrl": "https://www.youtube.com/watch?v=lFzVJEksoDY"
+        }
+      ]
+    }
+  ]
+}
