@@ -1,60 +1,93 @@
 import React, { useState } from 'react';
+import {
+  MDBBtn,
+  MDBModal,
+  MDBModalDialog,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
+  MDBModalFooter,
+} from 'mdb-react-ui-kit';
 import { Movie } from '../../types/types';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {  Navigate } from 'react-router-dom';
 
 import '../../styles/contentDetails.css';
 
 interface Props {
-  movie: Movie;
+  movie: Movie | null;
+  isLoggedIn: boolean;
 }
 
-const ContentDetails: React.FC<Props> = ({ movie }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const ContentDetails: React.FC<Props> = ({ movie, isLoggedIn }) => {
+  const [centredModal, setCentredModal] = useState(false);
+  const [videoPlayer, setVideoPlayer] = useState<React.ReactNode>(null);
 
-  const closeModal = () => {
-    setIsOpen(false);
+  if (!isLoggedIn) {
+    return <Navigate to="/login" />;
+  }
+
+  if (!movie) {
+    return <div>No movie selected</div>; 
+  }
+
+  const toggleOpen = () => {
+    setCentredModal(!centredModal);
+    if (!centredModal && movie) { 
+      const videoId = movie.videoUrl.split('watch?v=')[1];
+      setVideoPlayer(
+        <div className="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src={`https://www.youtube.com/embed/${videoId}`}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      );
+    } else {
+      setVideoPlayer(null);
+    }
   };
-
-  const videoId = movie.videoUrl.split('watch?v=')[1];
 
   return (
     <div className="content-details">
-      <h2>{movie.title}</h2>
-      <div className="details-container">
-        <div className="poster">
-          <button type="button" className="btn btn-primary" onClick={() => setIsOpen(true)}>
-            Ver Video
-          </button>
-        </div>
-        <div className="details">
-          <p><strong>Título:</strong> {movie.title}</p>
-          <p><strong>Descripción:</strong> {movie.sinopsis}</p>
-          <p><strong>Poster:</strong> {movie.poster}</p>
-        </div>
-      </div>
-
-      {/* Modal */}
-      <div className="modal fade" id="videoModal" tabIndex={-1} role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
-        <div className="modal-dialog modal-lg" role="document">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="videoModalLabel">{movie.title}</h5>
-              <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={closeModal}>
-                <span aria-hidden="true">&times;</span>
-              </button>
+      {movie && (
+        <>
+          <h2>{movie.title}</h2>
+          <div className="details-container">
+            <div className="poster">
+              <MDBBtn onClick={toggleOpen} className='video-image'>
+                <img src={movie.poster} alt={movie.title} />
+              </MDBBtn>
             </div>
-            <div className="modal-body">
-              <iframe
-                width="560"
-                height="315"
-                src={`https://www.youtube.com/embed/${videoId}?si=bKWVgtQMUqNC9Wrp`}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              ></iframe>
+            <div className="details">
+              <p><strong>Título:</strong> {movie.title}</p>
+              <p><strong>Descripción:</strong> {movie.sinopsis}</p>
+              <p><strong>Poster:</strong> {movie.poster}</p>
             </div>
           </div>
-        </div>
-      </div>
+
+          <MDBModal tabIndex='-1' open={centredModal} setOpen={setCentredModal} id='videoModal' backdrop>
+            <MDBModalDialog centered size='lg'>
+              <MDBModalContent>
+                <MDBModalHeader>
+                  <MDBModalTitle>{movie.title}</MDBModalTitle>
+                  <MDBBtn className='btn-close' color='none' onClick={toggleOpen}></MDBBtn>
+                </MDBModalHeader>
+                <MDBModalBody>
+                  {videoPlayer}
+                </MDBModalBody>
+                <MDBModalFooter>
+                </MDBModalFooter>
+              </MDBModalContent>
+            </MDBModalDialog>
+          </MDBModal>
+        </>
+      )}
     </div>
   );
 };

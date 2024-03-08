@@ -1,20 +1,30 @@
 import React from 'react';
-import { Movie } from '../../types/types'; 
+import { Category, Movie } from '../../types/types';
+import { Navigate } from 'react-router-dom';
 
-import '../../styles/contentCategory.css'
+import '../../styles/contentCategory.css';
 
 interface Props {
-  category: string;
-  movies: Movie[];
+  selectedCategory: Category | null;
   onMovieClick: (movie: Movie) => void;
+  isLoggedIn: boolean;
 }
 
-const ContentCategory: React.FC<Props> = ({ category, movies, onMovieClick }) => {
+const ContentCategory: React.FC<Props> = ({ selectedCategory, onMovieClick, isLoggedIn }) => {
+
+  if (!isLoggedIn) {
+    return <Navigate to="/login" />;
+  }
+
+  if (!selectedCategory) {
+    return <div>No hay categoría seleccionada</div>;
+  }
+
   return (
     <div className="content-category">
-      <h2 className="category-title">{category}</h2>
+      <h2 className="category-title">{selectedCategory.name}</h2>
       <div className="content-list">
-        {movies.map((movie) => (
+        {selectedCategory.content.map((movie) => (
           <div key={movie.id} className="content-item" onClick={() => onMovieClick(movie)}>
             <div className="content-item-inner">
               <div className="front">
@@ -31,4 +41,5 @@ const ContentCategory: React.FC<Props> = ({ category, movies, onMovieClick }) =>
     </div>
   );
 };
+
 export default ContentCategory;

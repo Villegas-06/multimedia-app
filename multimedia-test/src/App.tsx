@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import ContentCategory from './components/ContentCategory/ContentCategory';
 import ContentDetails from './components/ContentDetails/ContentDetails';
-import { Category, Movie } from './types/types'; // Importa las interfaces Category y Movie
-import contentData from './data/content.json'; // Importa el JSON de contenido
+import Register from './components/Register/Register';
+import { Category, Movie } from './types/types'; 
+import contentData from './data/content.json'; 
 import Navbar from './components/Navbar/Navbar';
+import { useAuth } from './authProvider';
 
 const App: React.FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState<Category | null>(null);
-  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
-
-  const handleLogin = (email: string) => {
-    setIsLoggedIn(true);
-  };
+  const { isLoggedIn, login, logout, register } = useAuth();
+  const [selectedCategory, setSelectedCategory] = React.useState<Category | null>(null);
+  const [selectedMovie, setSelectedMovie] = React.useState<Movie | null>(null);
 
   const handleCategoryClick = (category: Category) => {
     setSelectedCategory(category);
@@ -26,26 +25,56 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="App">
-      <Navbar />
-      {!isLoggedIn && <Login onLogin={handleLogin} />}
-      {isLoggedIn && (
-        <>
-          <Home
-            categories={contentData.categories}
-            onCategoryClick={handleCategoryClick}
+    <Router>
+      <div className="App">
+        <Navbar isLoggedIn={isLoggedIn} onLogout={logout} />
+        <Routes>
+          <Route
+            path="/home"
+            element={
+              isLoggedIn ? (
+                <Home
+                  isLoggedIn={isLoggedIn}
+                  categories={contentData.categories}
+                  selectedCategory={selectedCategory}
+                  selectedMovie={selectedMovie}
+                  onCategoryClick={handleCategoryClick}
+                  onMovieClick={handleMovieClick}
+                />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
           />
-          {selectedCategory && (
-            <ContentCategory
-              category={selectedCategory.name}
-              movies={selectedCategory.content as Movie[]}
-              onMovieClick={handleMovieClick}
-            />
-          )}
-          {selectedMovie && <ContentDetails movie={selectedMovie} />}
-        </>
-      )}
-    </div>
+          <Route path="/register" element={isLoggedIn ? <Navigate to="/home" /> : <Register onRegister={register} />} />
+          <Route
+            path="/login"
+            element={isLoggedIn ? <Navigate to="/home" /> : <Login onLogin={login} />}
+          />
+          <Route
+            path="/category/:category"
+            element={
+              isLoggedIn ? (
+                <ContentCategory isLoggedIn={isLoggedIn} selectedCategory={selectedCategory} onMovieClick={handleMovieClick} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/details/:id"
+            element={
+              isLoggedIn ? (
+                <ContentDetails isLoggedIn={isLoggedIn} movie={selectedMovie} />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route element={<Navigate to="/home" />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 

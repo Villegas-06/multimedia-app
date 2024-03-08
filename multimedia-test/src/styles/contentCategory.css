@@ -10,14 +10,14 @@
 }
 
 .content-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   justify-content: center;
+  gap: 20px;
 }
 
 .content-item {
   perspective: 1000px;
-  margin: 20px;
 }
 
 .content-item-inner {

@@ -1,6 +1,10 @@
 .navbar-container {
   background-color: #c1c1c1;
   padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Ajusta el z-index para estar encima del contenido */
 }
 
 .navbar {

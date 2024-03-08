@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../../styles/login.css';
+import '../../styles/register.css';
 import Swal from 'sweetalert2';
 
 interface Props {
-  onLogin: (email: string, password: string) => void;
+  onRegister: (email: string, password: string) => void;
 }
 
-const Login: React.FC<Props> = ({ onLogin }) => {
+const Register: React.FC<Props> = ({ onRegister }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
   const navigate = useNavigate();
 
   const handleEmailInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,28 +35,32 @@ const Login: React.FC<Props> = ({ onLogin }) => {
       return;
     }
 
+    if (password.trim().length < 6) {
+      setError('La contraseña debe tener al menos 6 caracteres');
+      return;
+    }
+
     try {
-      await onLogin(email, password);
-      
+      await onRegister(email, password);
+
       await Swal.fire({
         icon: 'success',
-        title: 'Inicio de Sesión Exitoso!',
-        text: 'Bienvenido de nuevo',
+        title: 'Registro Exitoso!',
+        text: 'Tu cuenta ha sido creada exitosamente',
         confirmButtonText: 'Ok'
       });
 
       navigate('/home');
     } catch (error) {
-      setError('Error al iniciar sesión. Verifica tus credenciales.');
-      console.error('Error al iniciar sesión:', error);
+      setError('Error al registrar. Por favor verifica tus datos.');
     }
   };
 
   return (
-    <div className="login-container">
-      <div className="login-content">
-        <h2 className="login-title">Iniciar Sesión</h2>
-        <form onSubmit={handleSubmit} className="login-form">
+    <div className="register-container">
+      <div className="register-content">
+        <h2 className="register-title">Regístrate</h2>
+        <form onSubmit={handleSubmit} className="register-form">
           <div className="form-group">
             <label htmlFor="email">Correo electrónico:</label>
             <input
@@ -77,12 +82,12 @@ const Login: React.FC<Props> = ({ onLogin }) => {
             />
           </div>
           {error && <div className="error">{error}</div>}
-          <button className="login-submit" type="submit">Iniciar Sesión</button>
-          <p className='register-account'>Deseas registrarte? Registrate <Link to='/register'>aqu&iacute;</Link></p>
+          <button className="register-submit" type="submit">Registrarse</button>
+          <p className='login-account'>Ya tienes una cuenta? <Link to='/login'>Inicia Sesión</Link></p>
         </form>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Register;

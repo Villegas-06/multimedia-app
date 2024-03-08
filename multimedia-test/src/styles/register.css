@@ -1,4 +1,4 @@
-.login-container {
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,7 +6,7 @@
   background-color: #f0f0f0;
 }
 
-.login-content {
+.register-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -15,19 +15,16 @@
   width: 100%;
 }
 
-.login-title {
+.register-title {
   font-weight: bold;
-  margin-bottom: 20px;
 }
 
-.login-form {
+.register-form {
   display: flex;
   flex-direction: column;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 20px;
 }
 
@@ -38,17 +35,13 @@ label {
 
 input[type="email"],
 input[type="password"] {
+  margin-left: 5px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-input[type="email"],
-input[type="password"] {
-  margin-left: 0;
-}
-
-.login-submit {
+.register-submit {
   background-color: #0074cc;
   color: #fff;
   border: none;
@@ -58,11 +51,11 @@ input[type="password"] {
   margin-top: 10px;
 }
 
-.login-submit:hover {
+.register-submit:hover {
   background-color: #005fa6;
 }
 
-.register-account {
+.login-account {
   margin-top: 8px;
   font-weight: 600;
 }
