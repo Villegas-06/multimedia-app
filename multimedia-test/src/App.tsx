@@ -29,6 +29,10 @@ const App: React.FC = () => {
       <div className="App">
         <Navbar isLoggedIn={isLoggedIn} onLogout={logout} />
         <Routes>
+        <Route
+            path="/"
+            element={<Login onLogin={login} />}
+          />
           <Route
             path="/home"
             element={
